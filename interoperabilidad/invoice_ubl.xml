@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<invoice
+    xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+    xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+    
+    <cbc:invoice_id>1</cbc:invoice_id>
+    <cbc:invoice_number>INV/2026/00001</cbc:invoice_number>
+    <cbc:invoice_date>2026-05-18</cbc:invoice_date>
+    <cbc:due_date>2026-05-18</cbc:due_date>
+    <cac:customer>
+        <cbc:customerid>7</cbc:customerid>
+        <cbc:name>Carlos Ruiz</cbc:name>
+        <cbc:city>Valencia</cbc:city>
+        <cbc:country>España</cbc:country>
+    </cac:customer>
+    <cac:invoice_lines>
+        <cbc:product>Microchips 2.1</cbc:product>
+        <cbc:quantity>3</cbc:quantity>
+        <cbc:price>3.00</cbc:price>
+        <cbc:subtotal>9.00</cbc:subtotal>  
+    </cac:invoice_lines> 
+</invoice>

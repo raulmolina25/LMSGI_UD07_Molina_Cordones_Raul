@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template id="report_invoice_document_custom">   
+    <t t-call="web.external_layout">       
+        <t t-foreach="docs" t-as="doc">            
+            <div class="page">               
+                <h2> Factura: <span t-field="doc.name"/> </h2>               
+                <h2> Fecha:<span t-field="doc.date"/> </h2>              
+                <table class="table table-sm">                    
+                    <thead>
+                        <tr>
+                            <th>Descripción</th> 
+                            <th class="text-right">Cantidad</th>                            
+                            <th class="text-right">Precio Unitario</th>
+                            <th t-if="has_discount" class="text-right">Descuento</th>
+                            <th class="text-right">Subtotal</th>
+                        </tr>
+                    </thead>                    
+                    <tbody>
+                        <t t-foreach="doc.invoice_line_ids" t-as="line">              
+                            <tr>                 
+                                <td>
+                                    <span t-field="line.name"/>
+                                </td>                               
+                                <td class="text-right">
+                                    <span t-field="line.quantity"/>
+                                </td>                               
+                                <td class="text-right">
+                                    <span t-field="line.price_unit"/>
+                                </td>
+                                <td t-if="has_discount" class="text-right">
+                                    <span t-field="line.discount"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.price_subtotal"/>
+                                </td>                                
+                            </tr>                         
+                        </t>                        
+                    </tbody>                    
+                </table>                               
+            </div>           
+        </t>
+    </t>
+</template>
